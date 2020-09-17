@@ -68,39 +68,16 @@ public class InOrderSuccessorInBSTII {
   }
 
   public Node inorderSuccessor(Node node) {
-    if (node == null) {
-      return null;
-    }
-    if (node.parent == null) {
-      if (node.right == null) {
-        return null;
-      }
+    if (node == null) return null;
+    if (node.right != null) {
       node = node.right;
-      while (node.left != null) {
-        node = node.left;
-      }
+      while(node.left != null) node = node.left;
       return node;
     } else {
-      if (node.right == null) {
-        Node temp = node;
-        while (node.parent != null) {
-          node = node.parent;
-          if (node.val > temp.val) {
-            return node;
-          }
-        }
-      } else {
-        if (node.right.left == null) {
-          return node.right;
-        }
-        node = node.right.left;
-        while (node.left != null) {
-          node = node.left;
-        }
-        return node;
-      }
+      while(node.parent != null && node == node.parent.right) node = node.parent;
+      return node.parent;
     }
-    return null;
+
   }
 
 }
