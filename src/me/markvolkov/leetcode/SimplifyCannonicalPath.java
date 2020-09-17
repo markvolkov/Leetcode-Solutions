@@ -83,57 +83,6 @@ public class SimplifyCannonicalPath {
       return result.length() > 1 ? result.toString().substring(0, result.length() - 1) : result.toString();
     }
 
-//
-//  class Solution {
-//
-//    public int[] intersection(int[] nums1, int[] nums2) {
-//      boolean num1Bigger = nums1.length > nums2.length;
-//      if (num1Bigger) {
-//        Arrays.sort(nums1);
-//      } else {
-//        Arrays.sort(nums2);
-//      }
-//      Set<Integer> intersection = new HashSet<>();
-//      if (num1Bigger) {
-//        for (int i = 0; i < nums1.length; i++) {
-//          if (contains(nums2, nums1[i], 0, nums2.length - 1)) {
-//            intersection.add(nums1[i]);
-//          }
-//        }
-//
-//      } else {
-//        for (int i = 0; i < nums2.length; i++) {
-//          if (contains(nums1, nums2[i], 0, nums1.length - 1)) {
-//            intersection.add(nums2[i]);
-//          }
-//        }
-//      }
-//      int[] result = new int[intersection.size()];
-//      int index = 0;
-//      for (Integer i : intersection) {
-//        result[index] = i;
-//        index++;
-//      }
-//      return result;
-//    }
-//
-//    public boolean contains(int[] array, int val, int left, int right) {
-//      if (left > right) {
-//        return false;
-//      }
-//      int middle = (left) + ((right - left) / 2);
-//      if (array[middle] == val) {
-//        return true;
-//      }
-//      if (array[middle] < val) {
-//        //Search left
-//        return contains(array, val, left, middle - 1);
-//      } else {
-//        //Search right
-//        return contains(array, val, middle + 1, right);
-//      }
-//    }
-//  }
 
 
 }
